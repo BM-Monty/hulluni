@@ -20,7 +20,7 @@ jobs:
     - name: Build
       run: dotnet build ./SampleSolution/sample/sample.csproj
     - name: Test
-      run: dotnet test --verbosity normal ./SampleSolution/sample.unittests/sampleunittests.csproj --no-build --logger:trx --results-directory ${{ github.workspace }}/TestResults
+      run: dotnet test --verbosity normal ./SampleSolution/sample.unittests/sampleunittests.csproj --logger:trx --results-directory ${{ github.workspace }}/TestResults
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action/windows@v2
       if: always()
